@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@using Web.Models
+@model Web.Models.EventListViewModel
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h3><strong>Public Events</strong></h3></div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Today's Events</div>
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.Label("Event Title")
+                </th>
+                <th>
+                    @Html.Label("BookTitle")
+                </th>
+                <th>
+                    @Html.Label("Location")
+                </th>
+                <th>
+                    @Html.Label("Start Date")
+                </th>
+                <th>
+                    @Html.Label("Start Time")
+                </th>
+                <th>
+                    @Html.Label("Duration")
+                </th>
+                <th>Actions</th>
+            </tr>
+            @foreach (EventViewModel entry in Model.PresentEvents)
+            {
+            <tr>
+
+                <td>@entry.EventTitle</td>
+                <td>@entry.BookTitle</td>
+                <td>@entry.Location</td>
+                <td>@entry.StartDate</td>
+                <td>@entry.StartTime</td>
+                <td>@entry.Duration hr</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = entry.EventID })
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 panel panel-default">
+        <div class="panel-heading">Past Events</div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.Label("Event Title")
+                    </th>
+                    <th>
+                        @Html.Label("BookTitle")
+                    </th>
+                    <th>
+                        @Html.Label("Location")
+                    </th>
+                    <th>
+                        @Html.Label("Start Date")
+                    </th>
+                    <th>
+                        @Html.Label("Start Time")
+                    </th>
+                    <th>
+                        @Html.Label("Duration")
+                    </th>
+                </tr>
+                @foreach (EventViewModel entry in Model.PastEvents)
+                {
+                <tr>
+                    <td>@entry.EventTitle</td>
+                    <td>@entry.BookTitle</td>
+                    <td>@entry.Location</td>
+                    <td>@entry.StartDate</td>
+                    <td>@entry.StartTime</td>
+                    <td>@entry.Duration hr</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = entry.EventID })
+                    </td>
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-6 panel panel-default">
+        <div class="panel-heading">Upcoming Events</div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.Label("Event Title")
+                    </th>
+                    <th>
+                        @Html.Label("BookTitle")
+                    </th>
+                    <th>
+                        @Html.Label("Location")
+                    </th>
+                    <th>
+                        @Html.Label("Start Date")
+                    </th>
+                    <th>
+                        @Html.Label("Start Time")
+                    </th>
+                    <th>
+                        @Html.Label("Duration")
+                    </th>
+                </tr>
+                @foreach (EventViewModel entry in Model.FutureEvents)
+                {
+                <tr>
+                    <td>@entry.EventTitle</td>
+                    <td>@entry.BookTitle</td>
+                    <td>@entry.Location</td>
+                    <td>@entry.StartDate</td>
+                    <td>@entry.StartTime</td>
+                    <td>@entry.Duration hr</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details","Event",new { id = entry.EventID },null)
+                       
+                    </td>
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+
+</div>

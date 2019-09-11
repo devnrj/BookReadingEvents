@@ -1,0 +1,5 @@
+C:\Users\neerajkumar03\source\repos\BookReadingEvents\Models\bin\Debug\Models.dll
+C:\Users\neerajkumar03\source\repos\BookReadingEvents\Models\bin\Debug\Models.pdb
+C:\Users\neerajkumar03\source\repos\BookReadingEvents\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\neerajkumar03\source\repos\BookReadingEvents\Models\obj\Debug\Models.dll
+C:\Users\neerajkumar03\source\repos\BookReadingEvents\Models\obj\Debug\Models.pdb
